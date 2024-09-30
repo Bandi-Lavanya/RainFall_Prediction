@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Rainfall Prediction</h2>
+        <form action="/predict" method="post"> 
+            <label for="temperature">Temperature:</label>
+            <input type="number" id="temperature" name="temperature" step="0.01" pattern="[0-9]+([.,][0-9]+)?" title="Please enter a valid temperature (float)" required>
+            <label for="humidity">Humidity:</label>
+            <input type="number" id="humidity" name="humidity" step="0.01" pattern="[0-9]+([.,][0-9]+)?" title="Please enter a valid humidity (float)" required>
+            <label for="wind_speed">Wind Speed:</label>
+            <input type="number" id="wind_speed" name="wind_speed" step="0.01" pattern="[0-9]+([.,][0-9]+)?" title="Please enter a valid wind speed (float)" required>
+            <label for="pressure">Pressure:</label>
+            <input type="number" id="pressure" name="pressure" step="0.01" pattern="[0-9]+([.,][0-9]+)?" title="Please enter a valid pressure (float)" required>
+            <label for="cloud_cover">Cloud Cover:</label>
+            <input type="number" id="cloud_cover" name="cloud_cover" step="0.01" pattern="[0-9]+([.,][0-9]+)?" title="Please enter a valid cloud cover (float)" required>
+            <label for="previous_rainfall">Previous Rainfall:</label>
+            <input type="number" id="previous_rainfall" name="previous_rainfall" step="0.01" pattern="[0-9]+([.,][0-9]+)?" title="Please enter a valid previous rainfall (float)" required>
+            <button type="submit" class="predict-button">Predict</button> <!-- Changed the button type to 'submit' -->
+        </form>
+        
+        <!-- Add this empty div to display the predicted rainfall -->
+        <div id="predicted-rainfall"></div>
+
+    </div>
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #7b5dab;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .container {
+        background-color: #c97cc4;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    .container h2 {
+        margin-bottom: 20px;
+    }
+    
+    .container form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container form label {
+        margin-bottom: 5px;
+    }
+    
+    .container form input {
+        margin-bottom: 10px;
+        padding: 8px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    
+    .container form .predict-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+    .container form .predict-button:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</body>
+</html>
